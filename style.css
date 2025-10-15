@@ -1,3 +1,20 @@
+html {
+  color-scheme: light dark;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.8em;  
+  display: inline-flex;   
+}
+
+body {
+  background: canvas;
+  color: canvastext;
+}
+
 body {
   /* Set line height to 1.5 times the font size
 	   and use the OS’s UI font as the website font
@@ -91,5 +108,18 @@ h2 {
   line-height: 1.1;
   padding-inline-start: 0.6rem;
   border-inline-start: 0.35rem solid var(--color-accent);
+}
+
+nav {
+  --border-color: oklch(50% 10% 200 / 40%);
+  display: flex;
+  margin-bottom: 1em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav a.current {
+  border-bottom: 0.4em solid var(--border-color);
+  padding-bottom: 0.1em;
+  font-weight: bold;
 }
 
