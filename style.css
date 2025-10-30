@@ -163,3 +163,22 @@ nav a.current {
   gap: 1rem;             
   margin: 0.75rem 0 1rem;
 }
+
+#projects-pie-plot path {
+  transition: 300ms;
+  cursor: pointer; 
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+#projects-pie-plot path { cursor: pointer; }
+
+/* Selected state overrides the per-slice --color */
+.selected {
+  --color: oklch(60% 45% 0) !important; /* pick any distinct color */
+}
+
+/* When a PATH is selected, fill it with the selected color */
+#projects-pie-plot path.selected { fill: var(--color); }
