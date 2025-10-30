@@ -126,10 +126,33 @@ nav a.current {
 #projects-pie-plot {
   max-width: 20em;
   margin-block: 2em;
-
   overflow: visible;
 }
 
-h1.projects-title {
-  color: CanvasText;     /* matches your dark/light mode system color */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); 
+  gap: 0.5rem 1rem;
+  padding: 0.75rem;
+  margin: 0.75rem 0 1rem;
+  border: 1px solid oklch(50% 10% 200 / 40%);
+  border-radius: 0.5rem;
+  list-style: none;
+  padding-left: 0;
+  justify-content: center;  
+  justify-items: center;   
+  align-items: center;    
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  gap: 0.5rem;
+}
+.legend .swatch {
+  display: inline-block;
+  width: 0.9em;
+  aspect-ratio: 1 / 1;
+  background: var(--color);
+  border-radius: 0.2em;
 }
