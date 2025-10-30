@@ -123,3 +123,13 @@ nav a.current {
   font-weight: bold;
 }
 
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+h1.projects-title {
+  color: CanvasText;     /* matches your dark/light mode system color */
+}
