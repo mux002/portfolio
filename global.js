@@ -22,6 +22,7 @@ let pages = [
   { url: 'projects/', title: 'Projects' },
   { url: "contact/",    title: "Contact" },
   { url: "resume/",     title: "Resume" },
+  { url: "meta/",     title: "Meta" },
   { url: "https://github.com/mux002", title: "GitHub", external: true },
 ];
 let nav = document.createElement('nav');
