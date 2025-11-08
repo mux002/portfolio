@@ -182,3 +182,19 @@ nav a.current {
 
 /* When a PATH is selected, fill it with the selected color */
 #projects-pie-plot path.selected { fill: var(--color); }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem 1rem;
+  margin-block: 1rem;
+}
+
+.stats dt {
+  font-weight: 600;
+}
+
+.stats dd {
+  margin: 0;
+}
+
