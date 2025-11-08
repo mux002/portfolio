@@ -198,3 +198,54 @@ nav a.current {
   margin: 0;
 }
 
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+dl.info dt {
+  margin: 0;
+  font-weight: 600;
+  opacity: 0.7;              
+  text-transform: none;
+}
+
+dl.info dd {
+  margin: 0;
+}
+
+.tooltip {
+  position: fixed;             
+  top: 1em;                      
+  left: 1em;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.6rem;
+  border: 1px solid color-mix(in oklch, canvastext 20%, canvas 80%);
+  background: color-mix(in oklch, canvas 90%, canvastext 10%); 
+  color: canvastext;
+  box-shadow:
+    0 2px 6px color-mix(in oklch, canvastext 15%, canvas 85%),
+    0 8px 24px color-mix(in oklch, canvastext 8%, canvas 92%);
+  backdrop-filter: blur(8px);
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+
