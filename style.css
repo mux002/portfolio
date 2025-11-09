@@ -248,4 +248,14 @@ circle:hover {
   transform: scale(1.5);
 }
 
+.gridlines line {
+  stroke: color-mix(in oklch, canvastext 25%, canvas 75%);
+  stroke-width: 1;
+  stroke-opacity: 0.35;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
 
