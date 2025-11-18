@@ -258,4 +258,13 @@ circle.selected {
   fill: #ff6b6b;
 }
 
+circle {
+  transition: 200ms;         
+  transform-origin: center;   
+  transform-box: fill-box;    
+
+  @starting-style {
+    r: 0;
+  }
+}
 
