@@ -1,5 +1,7 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
+
 let xScale;
 let yScale;
 
@@ -390,8 +392,46 @@ function onTimeSliderChange() {
     const filteredData = data.filter(d => d.datetime <= commitMaxTime);
     updateScatterPlot(data, filteredCommits);
     updateCommitInfo(filteredData, filteredCommits);
+    updateFileDisplay(filteredCommits);
 }
 progressEl.addEventListener('input', onTimeSliderChange);
 onTimeSliderChange();
 
+function updateFileDisplay(filteredCommits) {
+    let lines = filteredCommits.flatMap((d) => d.lines);
+    let files = d3
+        .groups(lines, (d) => d.file)
+        .map(([name, lines]) => {
+            return { name, lines };
+        })
+        .sort((a, b) => b.lines.length - a.lines.length);
 
+    let filesContainer = d3
+        .select('#files')
+        .selectAll('div')
+        .data(files, (d) => d.name)
+        .join(
+            // This code only runs when the div is initially rendered
+            (enter) =>
+            enter.append('div').call((div) => {
+                const dt = div.append('dt');
+                dt.append('code');
+                dt.append('small');
+                div.append('dd');
+            }),
+        );
+
+    // This code updates the div info
+    filesContainer.select('dt > code').text((d) => d.name);
+    filesContainer.select('dt > small').text(d => `${d.lines.length} lines`);
+
+    filesContainer
+    .select('dd')
+    .selectAll('div.loc')
+    .data(d => d.lines)
+    .join('div')
+    .attr('class', 'loc')
+    .attr('style', (d) => `--color: ${colors(d.type)}`);
+    }
+
+updateFileDisplay(filteredCommits);
