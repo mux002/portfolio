@@ -322,3 +322,29 @@ circle {
   border-radius: 50%;
 }
 
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+  margin-bottom: 30vh; 
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story {
+  flex: 1;
+}
+
+#scatter-plot-wrap { flex: 1; }
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 60vh;
+}
+
+#scrolly-1, #scatter-plot-wrap, #scatter-plot { overflow: visible; }
