@@ -12,14 +12,6 @@
     <nav></nav>
     <h1>Meta</h1>
     <p>This page includes stats about the code of this website.</p>
-    <div class="toolbar" style="display:flex; gap:1rem; align-items:baseline;">
-        <label style="display:flex; gap:.5rem; align-items:center; flex:1;">
-            Show commits until:
-            <input id="commit-progress" type="range" min="0" max="100" step="1" value="100" 
-                style="flex:1; width:clamp(320px, 60vw, 900px);"/>
-            <time id="commit-time" style="margin-left:auto;"></time>
-        </label>
-    </div>
 
     <div id="scrolly-1">
         <div id="scatter-story">
@@ -46,6 +38,14 @@
 
     <div class="scrolly-spacer" aria-hidden="true"></div>
 
+    <div class="toolbar" style="display:flex; gap:1rem; align-items:baseline;">
+        <label style="display:flex; gap:.5rem; align-items:center; flex:1;">
+            Show commits until:
+            <input id="commit-progress" type="range" min="0" max="100" step="1" value="100" 
+                style="flex:1; width:clamp(320px, 60vw, 900px);"/>
+            <time id="commit-time" style="margin-left:auto;"></time>
+        </label>
+    </div>
     <h2>Files</h2>
     <dl id="files">
         <!-- D3 will create:
